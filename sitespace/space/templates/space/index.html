@@ -2,13 +2,12 @@
 {% block content %}
 <h1>{{ title }}</h1>
 
-{% include 'space/includes/nav.html' %}
+<!--{% include 'space/includes/nav.html' %}-->
     <ul>
     {% for company in company %}
     <li>
         <h2>{{ company.title }}</h2>
         <p>{{ company.content }}</p>
-        <!--<p><a href="https://ya.ru" target="_blank">Ссылка на Яндекс</a></p>  открывает страница яндекса в новой странице-->
         <p><a href="{% url 'post' company.id %}">Читать статью</a></p>
         {% if not forloop.last %}
         <hr>

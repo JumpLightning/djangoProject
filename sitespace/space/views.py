@@ -21,24 +21,29 @@ def index(request):
     return render(request, 'space/index.html', context=data) # ответ клиенту на запрос на сайт
 
 def about(request):
-    return render(request, 'space/about.html', {'title': "О сайте", 'menu': menu})
+    return render(request, 'space/about.html')
 
 def show_post(request, post_id):
     return HttpResponse(f'Отображение статьи с id = {post_id}')
 
 def news(request):
-    return HttpResponse('Новости')
-    #return render(request, 'space/news.html', {'title': "Новости", 'menu': menu})
+    return render(request, 'space/news.html') # {'title': "Новости", 'menu': menu})
 
 def company(request):
-    return HttpResponse('Компании')
-    #cont = {'menu': menu,
-            #'company': data_company}
-    #return render(request, 'space/company.html', context=cont)
+    return render(request, 'space/company.html')
+
+def space_x(request):
+    return render(request, 'space/space_x.html')
+
+def northrop_grumman(request):
+    return render(request, 'space/northrop_grumman.html')
+
+def rocket_lab(request):
+    return render(request, 'space/rocket_lab.html')
 
 def rockets_categories(request):
-    return HttpResponse('Ракеты')
-    #return render(request, 'space/rockets.html', {'title': "Ракеты", 'menu': menu})
+    return render(request, 'space/rockets_categories.html')
+
 
 #def rockets_categories_by_slug(request, rockets_categories_slug):
     #if request.GET:
@@ -46,7 +51,7 @@ def rockets_categories(request):
     #return HttpResponse(f'<h1>Ракеты по категориям</h1><p>slug: {rockets_categories_slug}</p>')
 
 def login(request):
-    return render(request, 'space/login.html', {'title': "Войти", 'menu': menu})
+    return render(request, 'space/login.html')
     #return HttpResponse('Войти')
 
 def page_not_found(request, exception):

@@ -1,4 +1,46 @@
-/* здесь находятся комментарии */
-<img src="{% static 'images/example.jpg' %}" alt="Пример изображения" class="img-fluid" style="max-height: 300px;">
+/* Определяем переменные для цветов панели навигации */
+:root {
+    --navbar-bg-color: #000000; /* Новый цвет фона панели навигации */
+    --navbar-text-color: white; /* Новый цвет текста на панели навигации */
+    --navbar-hover-bg-color: #54345; /* Новый цвет фона при наведении */
+    --navbar-hover-text-color: red; /* Новый цвет текста при наведении */
+}
 
-"https://s3images.coroflot.com/user_files/individual_files/large_311319_hxans0pdjyiow5yivpdhwtkxw.jpg" class="d-block w-100" alt="..."
+/* Применяем переменные для стилей панели навигации */
+.navbar {
+    background-color: var(--navbar-bg-color) !important;
+    color: var(--navbar-text-color) !important;
+}
+
+.navbar .nav-link {
+    color: var(--navbar-text-color) !important;
+}
+
+.navbar .nav-link:hover {
+    background-color: var(--navbar-hover-bg-color) !important;
+    color: var(--navbar-hover-text-color) !important;
+}
+
+.dropdown-menu {
+    background-color: var(--navbar-bg-color);
+}
+
+.dropdown-item {
+    color: var(--navbar-text-color);
+    background-color: var(--navbar-bg-color);
+}
+
+.dropdown-item:hover {
+    background-color: var(--navbar-hover-bg-color);
+    color: var(--navbar-hover-text-color);
+}
+
+.dropdown-divider {
+    border-top: 1px solid #999999; /* Цвет линии */
+    margin: 0.5rem 0; /* Отступы сверху и снизу */
+}
+
+video {
+    width: 100%;
+    height: auto;
+}
