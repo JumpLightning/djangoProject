@@ -1,2 +1,4 @@
 /* здесь находятся комментарии */
-h1 {color: aqua}
+<img src="{% static 'images/example.jpg' %}" alt="Пример изображения" class="img-fluid" style="max-height: 300px;">
+
+"https://s3images.coroflot.com/user_files/individual_files/large_311319_hxans0pdjyiow5yivpdhwtkxw.jpg" class="d-block w-100" alt="..."
