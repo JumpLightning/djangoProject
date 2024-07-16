@@ -1,6 +1,7 @@
 from django.urls import path
 from . import views
-
+from django.conf import settings
+from django.urls import path, include
 
 urlpatterns = [
     path('', views.index, name='home'), #http://127.0.0.1:8000/
@@ -16,3 +17,9 @@ urlpatterns = [
     #path('rockets/<slug:rockets_categories_slug>/', views.rockets_categories_by_slug, name='rockets_cats_slug') # http://127.0.0.1:8000/ships/df
 
 ]
+
+if settings.DEBUG:
+    import debug_toolbar
+    urlpatterns = [
+        path('__debug__/', include(debug_toolbar.urls)),
+    ] + urlpatterns

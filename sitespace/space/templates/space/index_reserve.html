@@ -2,6 +2,21 @@
 {% block content %}
 <h1>{{ title }}</h1>
 
+<!--{% include 'space/includes/nav.html' %}-->
+    <ul>
+    {% for company in company %}
+    <li>
+        <h2>{{ company.title }}</h2>
+        <p>{{ company.content }}</p>
+        <p><a href="{% url 'post' company.id %}">Читать статью</a></p>
+        {% if not forloop.last %}
+        <hr>
+        {% endif %}
+    </li>
+    {% endfor %}
+</ul>
+    {% include 'space/includes/nav.html' %}
+
     <a href="mailto:mrmrusinov@gmail.com">Для обратной связи и предложений</a> <!--добавляет ссылку на почту и открывает почтовый клиент--> <a href="tg://https://t.me/mrmrusinov">Написать в Telegram</a>
     <!-- еще можно так для ТГ <a href="tg://resolve?domain=NikName">Написать кому-то в Telegram</a> -->
 {% endblock %}
